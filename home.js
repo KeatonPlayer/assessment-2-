@@ -81,18 +81,17 @@ function canWeDeliver(zipCode){
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE\
+// CODE HERE
 
-// function canWeDeliver2(zipCodes){
-//     if (zipCodes.includes(85205, 85204, 85203, 85213, 85206)){
-//         return 'Sorry we dont deliver to that address'
-//     }
-//     else { return ' You are in the delivery zone'}
-// }
+function canWeDeliverTwo(zipCode){
+    if(deliveryAreaZipCodes.includes(zipCode)){
+        return console.log('we cannot deliver into this zone')
+ }else{ console.log('success')}
+}
 
-// console.log(canWeDeliver2(85205))
+canWeDeliverTwo(8522)
 
-// I dont know why .includes breaks on a parameter it should work right? 
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -129,20 +128,22 @@ const deals = [
 */
 
 //CODE HERE
-let rep = deals.replace[title]('15%', '10%')
+deals[0].title= deals[0].title.replace('15','10')
 
-console.log(rep)
-/*
-    The restaurant is going to continue its
-    family deal for another month. 
+// /*
+//     The restaurant is going to continue its
+//     family deal for another month. 
 
-    Reassign the value of the second deal's desc
-    to be itself, but use the `replace` method
-    to replace the word March with April.
+//     Reassign the value of the second deal's desc
+//     to be itself, but use the `replace` method
+//     to replace the word March with April.
 
-    You should also make sure that there is no
-    whitespace in this string, since it seems
-    to be displaying wrong on the live site.
-*/
+//     You should also make sure that there is no
+//     whitespace in this string, since it seems
+//     to be displaying wrong on the live site.
+// */
 
-//CODE HERE
+// //CODE HERE
+deals[1]=deals[1].desc.replace('March','April').trim()
+
+console.log(deals)

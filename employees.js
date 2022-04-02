@@ -20,6 +20,15 @@
 */
 
 //CODE HERE
+class Employee {
+    constructor(name, shifts){
+this.name = name
+this.shifts = shifts
+    }
+    getSched(){
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+}
 
 
 
@@ -34,14 +43,14 @@
 */
 
 //CODE HERE
-
+const emppoly1 = new Employee('Squidward',['mornings','nights','afternoons','evenings','dusk','dawn'])
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-
+emppoly1.getSched()
 
 /*
     Make a copy of the empOne object
@@ -56,9 +65,9 @@
 */
 
 //CODE HERE
-
-
-
+const empypoly2= {...emppoly1}
+empypoly2.name = 'Spongebob'
+console.log(empypoly2)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a class called Manager that *extends* 
@@ -83,7 +92,20 @@
 */
 
 //CODE HERE
-
+class Boss extends Employee{
+    constructor(name, shifts, employees ){
+        super(name, shifts)
+        this.employees=employees
+    }
+    getEmpolyees(){
+        console.log(`${this.name} rules over with an iron fist ${this.employees}`)
+    }
+    addEmployee(emp){
+        this.employees.push(emp)
+    }
+}
+        
+    
 
 
 /*
@@ -98,6 +120,10 @@
 */
 
 //CODE HERE
+const boss = new Boss('Mr Krabs','Eternity',['Squidward','Spongebob'])
+
+console.log(boss)
+
 
 
 /*
@@ -107,6 +133,7 @@
 
 //CODE HERE
 
+boss.getEmpolyees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -114,7 +141,7 @@
 */
 
 //CODE HERE 
-
+boss.addEmployee('Patrick')
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -122,3 +149,4 @@
 */
 
 //CODE HERE
+boss.getEmpolyees()

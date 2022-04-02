@@ -97,7 +97,22 @@ console.log(category)
 */
 
 //CODE HERE
-let foodArr = ['krabby patty','2.99','main course','5','forkids']
+foodArr = [{
+name: 'krusty Sammich',
+price: 4.45,
+tags: ['for adults','diet'],
+rating: 4,
+popularity: 5
+}
+,
+{ name: 'smol pizza',
+price: 1.99,
+category: 'appitizer',
+popularity: '5',
+tags: ['gluten free','for kids']
+}
+
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -114,8 +129,11 @@ let foodArr = ['krabby patty','2.99','main course','5','forkids']
 
 //CODE HERE
 
-const filteredFood = foodArr.filter()
+const filteredFood = foodArr.filter(obj =>{
+    return obj.tags.includes('for kids')
+})
 
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -158,6 +176,19 @@ const filteredFood = foodArr.filter()
 */
 
 //CODE HERE
+function filterByProperty (property,number,type){
+const filteredArr = foodArr.filter(pizobj =>{
+    if(type === "above"){
+        return pizobj[property] > number
+    }
+    else if( type = "below"){
+        return pizobj[property] < number
+    }
+    
+    else { return 'not a valid type'}
+})
+return filteredArr
+}
 
 
 /*
@@ -168,3 +199,4 @@ const filteredFood = foodArr.filter()
 */
 
 //CODE HERE
+console.log(filterByProperty('price',4,"above" ))

@@ -30,7 +30,18 @@
 */
 
 //CODE HERE
-
+class Tickey {
+    constructor(items, orderTime, customerId){
+        this.items = items
+        this.orderTime=orderTime
+        this.customerId=customerId
+        this.status = 'waiting'
+    }
+    updateStatus(newStatus){
+        this.status = newStatus
+      console.log(`za orda for ze custuma ${this.customerId} das eien ${this.status}`)
+    }
+}
 
 
 /*
@@ -46,7 +57,8 @@
 
 //CODE HERE
 
-
+const firstTicket = new Tickey(['pizza','garlic bread','hamburgerHelper'], '12:00','1900490freak')
+console.log(firstTicket)
 /*
     Call the `updateStatus` method on
     `firstTicket` passing in the string
@@ -54,3 +66,4 @@
 */
 
 //CODE HERE
+firstTicket.updateStatus('cookins')

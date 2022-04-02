@@ -17,7 +17,7 @@
     array method to calculate the sum of all
     the food. 
 */
-let total = 0
+
 const cart = [
     {
         name: 'pizza', 
@@ -36,7 +36,7 @@ const cart = [
 
 
 
-const summedPrice = cart.reduce((previous, current) => previous + current.price, total)
+const summedPrice = cart.reduce((previous, current) => previous + current.price, 0)
 
 
 
@@ -58,10 +58,10 @@ const summedPrice = cart.reduce((previous, current) => previous + current.price,
 //CODE HERE
 function calcFinalPrice (cartTotal, tax, coupon){
 let tot = cartTotal * tax + cartTotal - coupon
-return tot
+return tot.toFixed(2)
 }
 
-console.log(calcFinalPrice(summedPrice, .03, 5))
+console.log(calcFinalPrice(summedPrice, .03, 7.99))
 
 //////////////////PROBLEM 3////////////////////
 /*  
